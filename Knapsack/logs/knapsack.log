@@ -1,0 +1,27 @@
+2021-06-12 20:27:57,63:
+pickle loaded: C:\Users\eldad\AppData\Roaming\Python\Python38\site-packages\jedi\third_party\typeshed\stdlib\2and3\builtins.pyi
+
+2021-06-12 20:27:57,103:
+pickle loaded: C:\Users\eldad\AppData\Roaming\Python\Python38\site-packages\jedi\third_party\typeshed\stdlib\3\sys.pyi
+
+2021-06-12 20:28:02,447:
+pickle loaded: C:\Program Files\Python38\lib\typing.py
+
+2021-06-12 20:28:02,460:
+pickle loaded: C:\Users\eldad\AppData\Roaming\Python\Python38\site-packages\jedi\third_party\typeshed\stdlib\3\typing.pyi
+
+2021-06-12 20:28:05,910:
+diff parser start
+
+2021-06-12 20:28:05,911:
+line_lengths old: 1; new: 1
+
+2021-06-12 20:28:05,911:
+-> code[replace] old[1:1] new[1:1]
+
+2021-06-12 20:28:05,911:
+parse_part from 1 to 1 (to 0 in part parser)
+
+2021-06-12 20:28:05,911:
+diff parser end
+
