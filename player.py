@@ -28,11 +28,19 @@ class player():
         if(msg == None):
             _3deskey = self._gen3DesKey()
             self.des = triple_des(_3deskey,padmode=PAD_PKCS5)
-            return self.knap_other.cipher(_3deskey)
+            sign = self.ecdsa_self.sign(_3deskey)
+            return self.knap_other.cipher(json.dumps({
+                "key" : _3deskey,
+                "sign" : [sign.r,sign.s]
+            }))
         if(msg != None):
-            self.des = triple_des(self.knap_self.decipher(msg),padmode=PAD_PKCS5)
-            return 0
-        return 1
+            msg = self.knap_self.decipher(msg)
+            msg = json.loads(msg)
+            sign = Signature(msg["sign"][0],msg["sign"][1])
+            if(self.ecdsa_other.verify(msg['key'],sign) == True):
+                self.des = triple_des(msg["key"],padmode=PAD_PKCS5)
+                return True
+        return False
 
     # TODO
     def send(self, msg, name):

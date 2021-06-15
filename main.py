@@ -51,8 +51,10 @@ def main():
 
         print("enter msg to send to the other user:")
         msg = input()
+        
         if(not sender.des):
-            receiver.keyexchange(sender.keyexchange())
+            verification = receiver.keyexchange(sender.keyexchange())
+            print("key exchange happend and the signature is: ",verification)
         y = sender.send(msg, receiver.name)
         print("the encrypted message:")
         print(y)
